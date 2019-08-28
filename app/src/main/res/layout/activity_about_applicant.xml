@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutApplicant">
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="313dp" />
+
+    <include
+        android:id="@+id/include7"
+        layout="@layout/toolbar"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-118dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="About Applicant"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/include7"
+        app:layout_constraintTop_toTopOf="@+id/include7"
+        app:layout_constraintVertical_bias="0.188" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="279dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="84dp"
+        android:text="State"
+        android:paddingBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.31"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView8"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/showState"
+        android:layout_width="282dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:paddingTop="1dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.317"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="284dp"
+        android:layout_height="22dp"
+        android:text="Coverage Period"
+        app:layout_constraintBottom_toTopOf="@+id/showCoveragePeriod"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.307"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showState" />
+
+    <EditText
+        android:id="@+id/showCoveragePeriod"
+        android:layout_width="284dp"
+        android:layout_height="38dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/include7"
+        app:layout_constraintEnd_toEndOf="@+id/include7"
+        app:layout_constraintHorizontal_bias="0.283"
+        app:layout_constraintStart_toStartOf="@+id/include7"
+        app:layout_constraintTop_toBottomOf="@+id/showState"
+        app:layout_constraintVertical_bias="0.115" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="273dp"
+        android:layout_height="21dp"
+        android:text="Premium"
+        app:layout_constraintBottom_toBottomOf="@+id/include7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showCoveragePeriod"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <EditText
+        android:id="@+id/showPremium"
+        android:layout_width="293dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.305"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19"
+        app:layout_constraintVertical_bias="0.069" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
