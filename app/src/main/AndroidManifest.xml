@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SubmittingOfficeDetails"></activity>
+        <activity
+            android:name=".ocr">
+            <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+
+                          <category android:name="android.intent.category.LAUNCHER" />
+                     </intent-filter>
+        </activity>
+        <activity android:name=".SubmittingOfficeDetails" />
         <activity android:name=".ReviewDetails" />
         <activity android:name=".AcceleratedUnderwriting" />
         <activity android:name=".AboutApplicant" />
@@ -21,11 +29,11 @@
         <activity android:name=".SelectCoverage" />
         <activity android:name=".StartNewCase" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
     </application>
 

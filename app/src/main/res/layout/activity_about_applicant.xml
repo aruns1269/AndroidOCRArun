@@ -115,4 +115,28 @@
         app:layout_constraintTop_toBottomOf="@+id/textView19"
         app:layout_constraintVertical_bias="0.069" />
 
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="292dp"
+        android:layout_height="24dp"
+        android:text="Billing Frequency"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showPremium"
+        app:layout_constraintVertical_bias="0.051" />
+
+    <EditText
+        android:id="@+id/showBillingFrequency"
+        android:layout_width="291dp"
+        android:layout_height="39dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20"
+        app:layout_constraintVertical_bias="0.077"
+        tools:layout_editor_absoluteX="36dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

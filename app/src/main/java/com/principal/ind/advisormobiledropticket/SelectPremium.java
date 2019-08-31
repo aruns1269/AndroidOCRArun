@@ -36,7 +36,7 @@ public class SelectPremium extends AppCompatActivity {
                 if(!enterPremium.getText().toString().equals("")) {
                     if(!spinner.getSelectedItem().toString().equals("Select Billing Frequency")) {
                         proposedInsured.setPremium(enterPremium.getText().toString());
-                        proposedInsured.setPremium(spinner.getSelectedItem().toString());
+                        proposedInsured.setBillingFrequency(spinner.getSelectedItem().toString());
                         Intent intent = new Intent(getApplicationContext(), SelectUnderwritingClass.class);
                         intent.putExtra("PROPOSEDINSURED",proposedInsured);
                         startActivity(intent);
