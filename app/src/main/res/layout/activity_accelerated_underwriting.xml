@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AcceleratedUnderwriting">
+
+    <include
+        android:id="@+id/include8"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:text="Are you requesting the Accelerated UnderWriting Program?"
+        app:layout_constraintBottom_toBottomOf="@+id/include8"
+        app:layout_constraintTop_toTopOf="@+id/include8"
+        app:layout_constraintVertical_bias="0.298"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <RadioGroup
+        android:id="@+id/accelerated_underwriting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        app:layout_constraintVertical_bias="0.022"
+        tools:layout_editor_absoluteX="-16dp">
+
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="112dp"
+            android:layout_height="match_parent"
+            android:text="Yes" />
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:text="Would you like Principal to order exam requirements for you?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accelerated_underwriting"
+        app:layout_constraintVertical_bias="0.036"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <RadioGroup
+        android:id="@+id/order_exam_requirements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/include8"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
+
+        <RadioButton
+            android:id="@+id/radioButton8"
+            android:layout_width="112dp"
+            android:layout_height="match_parent"
+            android:text="Yes" />
+
+        <RadioButton
+            android:id="@+id/radioButton9"
+            android:layout_width="186dp"
+            android:layout_height="match_parent"
+            android:text="No" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Which ParaMed vendor would you prefer?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_exam_requirements"
+        app:layout_constraintVertical_bias="0.037"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <RadioGroup
+        android:id="@+id/paramed_Vendor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        app:layout_constraintVertical_bias="0.065"
+        tools:layout_editor_absoluteX="0dp">
+
+        <RadioButton
+            android:id="@+id/radioButton10"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="ExamOne" />
+
+        <RadioButton
+            android:id="@+id/radioButton11"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:text="APS" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textSize="30dp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/rounded_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paramed_Vendor" />
+
+    <TextView
+        android:id="@+id/validateAcceleratedUnderwriting"
+        android:layout_width="368dp"
+        android:layout_height="21dp"
+        android:gravity="center_horizontal"
+        android:text=""
+        android:textColor="@android:color/holo_red_light"
+        app:layout_constraintBottom_toTopOf="@+id/next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paramed_Vendor"
+        app:layout_constraintVertical_bias="0.91" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

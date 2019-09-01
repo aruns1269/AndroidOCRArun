@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "968516665262",
+    "firebase_url": "https://ocr-project-c840f.firebaseio.com",
+    "project_id": "ocr-project-c840f",
+    "storage_bucket": "ocr-project-c840f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:968516665262:android:6c5f4d8f98e961d0",
+        "android_client_info": {
+          "package_name": "com.principal.ind.advisormobiledropticket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "968516665262-r1rhpkdrqvgsn6r314vqag4e8anpboc3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbEyb5R1VDUZ9uoOiPiharNEOfgr156tk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "968516665262-r1rhpkdrqvgsn6r314vqag4e8anpboc3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

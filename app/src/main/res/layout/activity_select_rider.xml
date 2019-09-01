@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectRider">
+
+    <include
+        android:id="@+id/include6"
+        layout="@layout/toolbar" />
+
+    <CheckBox
+        android:id="@+id/rider_Accelerated"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="252dp"
+        android:text="Accelerated Benefit Rider"
+        android:onClick="selectedRiders"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include6" />
+
+    <CheckBox
+        android:id="@+id/rider_Child"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Child Term Rider"
+        android:onClick="selectedRiders"
+        app:layout_constraintBottom_toBottomOf="@+id/include2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rider_Accelerated"
+        app:layout_constraintVertical_bias="0.046" />
+
+    <CheckBox
+        android:id="@+id/rider_Conversion"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Conversion Extension Rider"
+        android:onClick="selectedRiders"
+        app:layout_constraintBottom_toBottomOf="@+id/include2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rider_Child"
+        app:layout_constraintVertical_bias="0.044" />
+
+    <CheckBox
+        android:id="@+id/rider_Premium"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Waiver of Premium Rider"
+        android:onClick="selectedRiders"
+        app:layout_constraintBottom_toBottomOf="@+id/include2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rider_Conversion"
+        app:layout_constraintVertical_bias="0.038" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_button"
+        android:text="Next"
+        android:textColor="@android:color/white"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/include2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.389"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rider_Premium"
+        app:layout_constraintVertical_bias="0.402" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="143dp"
+        android:layout_height="61dp"
+        android:gravity="center_horizontal"
+        android:text="Rider"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/rider_Accelerated"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include6"
+        app:layout_constraintVertical_bias="0.727" />
+
+    <TextView
+        android:id="@+id/validateRider"
+        android:layout_width="227dp"
+        android:layout_height="27dp"
+        android:text=""
+        android:textColor="@android:color/holo_red_light"
+        app:layout_constraintBottom_toBottomOf="@+id/next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rider_Premium" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
