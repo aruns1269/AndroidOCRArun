@@ -5,6 +5,18 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+
+import com.google.android.gms.vision.Frame;
+import com.google.android.gms.vision.text.TextBlock;
+import com.google.android.gms.vision.text.TextRecognizer;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.provider.MediaStore;
 import android.util.SparseArray;
 import android.view.View;
@@ -12,21 +24,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.gms.vision.Frame;
-import com.google.android.gms.vision.text.TextBlock;
-import com.google.android.gms.vision.text.TextRecognizer;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ocr extends AppCompatActivity {
+public class finalOcr extends AppCompatActivity {
 
     Button btnCaptureImage;
     ImageView imageDisplay;
@@ -36,25 +38,28 @@ public class ocr extends AppCompatActivity {
     StringBuilder sb ;
     private static final int PICK_IMAGE = 1;
     Uri imageUri;
-
+    private static final int PICK_IMAGE_W2 = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
-        setContentView(R.layout.activity_ocr);
-        btnCaptureImage = (Button) findViewById(R.id.btn_captureImage1);
-        imageDisplay = (ImageView)findViewById(R.id.imageCapture);
-        btnResetImage = (Button)findViewById(R.id.btn_resetImage);
-        nextButton = (Button)findViewById(R.id.nextButton);
+        setContentView(R.layout.activity_final_ocr);
+        btnCaptureImage = (Button) findViewById(R.id.finalbtn_captureImage1);
+        imageDisplay = (ImageView)findViewById(R.id.finalimageCapture);
+        btnResetImage = (Button)findViewById(R.id.finalbtn_resetImage);
+        nextButton = (Button)findViewById(R.id.finalnextButton);
         sb = new StringBuilder();
 
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent,0);
+                Intent galleryIntent = new Intent();
+                galleryIntent.setType("image/*");
+                galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(galleryIntent,"select picture"),PICK_IMAGE_W2);
+
             }
         });
         btnResetImage.setOnClickListener(new View.OnClickListener() {
@@ -73,8 +78,8 @@ public class ocr extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Intent intent = new Intent(getApplicationContext(), review_form.class);
-               // intent.putExtra("data",sb.toString());
-               // startActivity(intent);
+                // intent.putExtra("data",sb.toString());
+                // startActivity(intent);
 
             }
         });
@@ -94,43 +99,52 @@ public class ocr extends AppCompatActivity {
 
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == 0) {
+        if (requestCode == PICK_IMAGE_W2 && resultCode == RESULT_OK) {
+            imageUri = data.getData();
+            sb = new StringBuilder();
             try {
-                sb = new StringBuilder();
-                Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
                 imageDisplay.setImageBitmap(bitmap);
-                //FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);
-                //FirebaseVisionTextRecognizer detector = FirebaseVision.getInstance().getOnDeviceTextRecognizer();
                 TextRecognizer recognizer = new TextRecognizer.Builder(getApplicationContext()).build();
-                if(!recognizer.isOperational())
-                {
-                    Toast.makeText(this,"error",Toast.LENGTH_SHORT).show();
-                }
-                else {
+                if (!recognizer.isOperational()) {
+                    Toast.makeText(this, "error", Toast.LENGTH_SHORT).show();
+                } else {
                     Frame frame = new Frame.Builder().setBitmap(bitmap).build();
                     SparseArray<TextBlock> items = recognizer.detect(frame);
-                    for (int i = 0;i<items.size();i++){
+                    ArrayList allLines = new ArrayList<>();
+                    Insured insured = new Insured();
+                    for (int i = 0; i < items.size(); i++) {
                         TextBlock myitem = items.valueAt(i);
-                        sb.append(myitem.getValue());
+
+                        String[] tempItems = myitem.getValue().split("\n");
+                        for (int z = 0; z < tempItems.length; z++) {
+                            allLines.add(tempItems[z]);
+                        }
+
+                        sb.append(allLines.get(i));
                         sb.append("\n");
                     }
+
+                    for (int i = 0 ; i < allLines.size() ; i++)
+                    {
+
+                        if (allLines.get(i).toString().matches("^\\d*-\\d*-\\d*$"))
+                        {
+                            sb.append(allLines.get(i).toString());
+                        }
+                    }
+                    Toast.makeText(this,sb.toString(),Toast.LENGTH_SHORT).show();
+
                 }
 
-                /*detector.processImage(image)
-                        .addOnSuccessListener(
-                                new OnSuccessListener<FirebaseVisionText>() {
-                                    @Override
-                                    public void onSuccess(FirebaseVisionText firebaseVisionText) {
-                                        processTextRecognitionResult(firebaseVisionText);
-                                    }
-                                }
-                        );*/
 
-            } catch (Exception e) {
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
+//
 
 
 
@@ -172,10 +186,10 @@ public class ocr extends AppCompatActivity {
 
                         String[] tempItems = myitem.getValue().split("\n");
                         for (int z = 0;z<tempItems.length; z++) {
-                           allLines.add(tempItems[z]);
+                            allLines.add(tempItems[z]);
                         }
-                       sb.append(allLines.get(i));
-                       sb.append("\n");
+                        sb.append(allLines.get(i));
+                        sb.append("\n");
                     }
                     if(allLines.get(0).toString().contains("California") || allLines.get(0).toString().contains("CALIFORNIA")){
                         insured.setState(allLines.get(0).toString().substring(0,10));
@@ -184,11 +198,11 @@ public class ocr extends AppCompatActivity {
                     }
                     for(int i=0;i<allLines.size();i++) {
                         if(allLines.get(i).toString().startsWith("FN")){
-                           insured.setFirstName(allLines.get(i).toString().replaceAll("FN",""));
+                            insured.setFirstName(allLines.get(i).toString().replaceAll("FN",""));
                             insured.setAddress1(allLines.get(i+1).toString());
                             insured.setAddress2(allLines.get(i+2).toString());
                         } else if(allLines.get(i).toString().startsWith("LN")){
-                          insured.setLastName(allLines.get(i).toString().replaceAll("LN",""));
+                            insured.setLastName(allLines.get(i).toString().replaceAll("LN",""));
                         }else if (allLines.get(i).toString().contains("DRIVER")) {
                             insured.setLastName(allLines.get(i + 1).toString().replaceAll("[0-9]*", ""));
                             insured.setFirstName(allLines.get(i + 2).toString().replaceAll("[0-9]*", ""));
@@ -240,9 +254,9 @@ public class ocr extends AppCompatActivity {
 //                            sb.append(allLines.get(i).toString());
 //                        }
 //                    }
-                   Toast.makeText(this,"firstname: "+firstname + "\nlastname: "+ lastname + "\ndob: " +dob +"\naddress1: "+address1+"\naddress2: "+address2+"\nDL no:"+dl+"\nexp: "+exp+"\ngender: "+sex+"\nheight: "+height+"\nweight: "+weight+"\nstate: "+state,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,"firstname: "+firstname + "\nlastname: "+ lastname + "\ndob: " +dob +"\naddress1: "+address1+"\naddress2: "+address2+"\nDL no:"+dl+"\nexp: "+exp+"\ngender: "+sex+"\nheight: "+height+"\nweight: "+weight+"\nstate: "+state,Toast.LENGTH_SHORT).show();
 
-         //         Toast.makeText(this,sb.toString(),Toast.LENGTH_SHORT).show();
+                    //         Toast.makeText(this,sb.toString(),Toast.LENGTH_SHORT).show();
                     setReviewForm(insured);
 
                 }
@@ -271,36 +285,36 @@ public class ocr extends AppCompatActivity {
 
     }
 
-   /* private void processTextRecognitionResult(FirebaseVisionText firebaseVisionText) {
-        String nameLine1 = "";
-        String nameLine2 = "";
-        String dlNumber = "";
-        String dateOfBirth = "";
-        String addresss ="";
-        String state ="";
-        List<FirebaseVisionText.Line> allLines = new ArrayList<FirebaseVisionText.Line>();
-        sb = new StringBuilder();
-        //sb.append("hello");
-        List<FirebaseVisionText.TextBlock> blocks = firebaseVisionText.getTextBlocks();
-        if(blocks.size()==0) {
-            Toast.makeText(this, "nothing", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        for (int i = 0;i<blocks.size();i++) {
-            List<FirebaseVisionText.Line> lines = blocks.get(i).getLines();
+    /* private void processTextRecognitionResult(FirebaseVisionText firebaseVisionText) {
+         String nameLine1 = "";
+         String nameLine2 = "";
+         String dlNumber = "";
+         String dateOfBirth = "";
+         String addresss ="";
+         String state ="";
+         List<FirebaseVisionText.Line> allLines = new ArrayList<FirebaseVisionText.Line>();
+         sb = new StringBuilder();
+         //sb.append("hello");
+         List<FirebaseVisionText.TextBlock> blocks = firebaseVisionText.getTextBlocks();
+         if(blocks.size()==0) {
+             Toast.makeText(this, "nothing", Toast.LENGTH_SHORT).show();
+             return;
+         }
+         for (int i = 0;i<blocks.size();i++) {
+             List<FirebaseVisionText.Line> lines = blocks.get(i).getLines();
 
-            //sb.append(blocks.get(i).getText()+" next ");
-            if(blocks.get(i).getText().contains("DL"))
-            {
-                addresss = blocks.get(i-1).getText();
-            }
-            for (int j = 0;j<lines.size();j++) {
-                List<FirebaseVisionText.Element> elements = lines.get(j).getElements();
-                allLines.add(lines.get(j));
+             //sb.append(blocks.get(i).getText()+" next ");
+             if(blocks.get(i).getText().contains("DL"))
+             {
+                 addresss = blocks.get(i-1).getText();
+             }
+             for (int j = 0;j<lines.size();j++) {
+                 List<FirebaseVisionText.Element> elements = lines.get(j).getElements();
+                 allLines.add(lines.get(j));
 
-                for (int k = 0;k<elements.size();k++) {
-                    //sb.append(elements.get(k).getText());
-                    *//*if(elements.get(k).getText().equalsIgnoreCase("driver")) {
+                 for (int k = 0;k<elements.size();k++) {
+                     //sb.append(elements.get(k).getText());
+                     *//*if(elements.get(k).getText().equalsIgnoreCase("driver")) {
                         sb.append(elements.get(k).getBoundingBox().flattenToString());
                     }*//*
                 }
@@ -371,8 +385,8 @@ public class ocr extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),LastForm.class);
-               // Intent intent = new Intent(getApplicationContext(),W2Form.class);
+                Intent intent = new Intent(getApplicationContext(),activity_tobacco.class);
+                // Intent intent = new Intent(getApplicationContext(),W2Form.class);
                 intent.putExtra("state", insured.getState());
                 intent.putExtra("fName",insured.getFirstName());
                 intent.putExtra("lName",insured.getLastName());
@@ -385,10 +399,11 @@ public class ocr extends AppCompatActivity {
                 intent.putExtra("gender",insured.getGender());
                 intent.putExtra("expiryDate",insured.getExpiryDate());
                 intent.putExtra("insured", insured);
-              //  intent.putExtra("")
+                //  intent.putExtra("")
                 startActivity(intent);
             }
         });
 
     }
+
 }

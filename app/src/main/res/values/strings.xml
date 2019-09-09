@@ -1,6 +1,27 @@
 <resources>
     <string name="app_name">AdvisorMobileDropTicket</string>
-    <string name="title_activity_ocr">ocr</string>
+    <string name="title_activity_ocr">Principal</string>
+    <string name="title_activity_last_form">Principal</string>
+    <string name="title_activity_first_page">Principal Life Insurance</string>
+    <string name="title_activity_second_page_instructions">Principal</string>
+    <string name="Instructions">Principal</string>
+    <string name="title_activity_selfie">Principal</string>
+    <string name="title_activity_last_form2">Principal</string>
+    <string name="title_activity_w2_form">Principal</string>
+    <string name="title_activity_get__quote">Principal</string>
+    <string name="title_activity_tobacco">Principal</string>
+    <string name="title_activity_final_ocr">Principal</string>
+    <string name="title_activity_attach">Principal</string>
+    <string name="bigText">I authorize any insurance (or reinsuring company , consumer reporting agency , govtmental agency, isurance agent, broker, licensed repreasentative, or any other organization </string>
+    <string-array name="states">
+        <item>Select State</item>
+        <item>New York</item>
+        <item>Iowa</item>
+        <item>California</item>
+        <item>Kenturcy</item>
+        <item>Washington</item>
+        <item>Alaska</item>
+    </string-array>
     <string-array name="billingFrequency">
         <item>Select Billing Frequency</item>
         <item>Monthly</item>
@@ -25,14 +46,5 @@
         <item>T6</item>
         <item>T7</item>
         <item>T8</item>
-    </string-array>
-    <string-array name="states">
-        <item>Select State</item>
-        <item>New York</item>
-        <item>Iowa</item>
-        <item>California</item>
-        <item>Kenturcy</item>
-        <item>Washington</item>
-        <item>Alaska</item>
     </string-array>
 </resources>

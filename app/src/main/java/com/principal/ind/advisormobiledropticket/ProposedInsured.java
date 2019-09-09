@@ -27,6 +27,7 @@ public class ProposedInsured implements Parcelable {
     private boolean orderExamRequirements;
     private String vendorName;
 
+
     protected ProposedInsured(Parcel in) {
         firstName = in.readString();
         lastName = in.readString();

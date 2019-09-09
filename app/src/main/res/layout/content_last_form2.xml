@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".last_form2"
+    tools:showIn="@layout/activity_last_form2">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="SSN ">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ssn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="INCOME">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/income"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="EMAIL ADDRESS">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="PHONE NUMBER">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phonenumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:id="@+id/btn_get_quote"
+                        android:layout_width="130dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="150dp"
+                        android:layout_marginTop="100dp"
+                        android:layout_marginBottom="330dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_button"
+                        android:text="CONTINUE"
+                        android:textColor="#fff" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>
