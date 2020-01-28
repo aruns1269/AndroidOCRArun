@@ -26,7 +26,7 @@ public class last_form2 extends AppCompatActivity {
         getquote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),Get_Quote.class);
+                Intent intent = new Intent(getApplicationContext(),LastFormPage2.class);
                 startActivity(intent);
             }
         });

@@ -4,124 +4,262 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="7dp"
+    android:layout_marginRight="7dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".LastForm"
     tools:showIn="@layout/activity_last_form">
 
-    <com.google.android.material.textfield.TextInputLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="620dp"
-        android:layout_marginTop="30dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/firstName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="FIRST NAME" />
-
+        android:layout_height="match_parent">
         <com.google.android.material.textfield.TextInputLayout
+
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="LAST NAME">
+            android:layout_height="620dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="15dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/lastNmae"
+                android:id="@+id/firstName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:hint="First Name"
+                android:paddingBottom="10dp"
+                android:textSize="18sp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="STATE">
+                android:hint="Last Name"
+                android:layout_marginBottom="15dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/state"
+                    android:id="@+id/lastNmae"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"/>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="ADDRESS LINE 1">
+                    android:hint="Sex"
+                    android:layout_marginBottom="15dp">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/addrline1"
+                        android:id="@+id/sex"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"/>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hint="ADDRESS LINE 2">
+                        android:hint="DOB"
+                        android:layout_marginBottom="15dp">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/addrline2"
+                            android:id="@+id/DOB"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="10dp"/>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:hint="DRIVING LICENSE NUMBER">
+                            android:hint="Address Line 1"
+                            android:layout_marginBottom="15dp">
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/dlnumber"
+                                android:id="@+id/addrline1"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content" />
+                                android:layout_height="wrap_content"
+                                android:paddingBottom="10dp"/>
 
                             <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:hint="HEIGHT">
+                                android:hint="Address Line 2"
+                                android:layout_marginBottom="15dp">
 
                                 <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/height"
+                                    android:id="@+id/addrline2"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:paddingBottom="10dp" />
 
                                 <com.google.android.material.textfield.TextInputLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:hint="WEIGHT">
+                                    android:hint="SSN ">
 
                                     <com.google.android.material.textfield.TextInputEditText
-                                        android:id="@+id/weight"
+                                        android:id="@+id/ssn"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content" />
 
                                     <com.google.android.material.textfield.TextInputLayout
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
-                                        android:hint="DOB">
+                                        android:hint="DL No"
+                                        android:layout_marginBottom="15dp">
 
                                         <com.google.android.material.textfield.TextInputEditText
-                                            android:id="@+id/DOB"
+                                            android:id="@+id/dlnumber"
                                             android:layout_width="match_parent"
-                                            android:layout_height="wrap_content" />
+                                            android:layout_height="wrap_content"
+                                            android:paddingBottom="10dp"/>
 
                                         <com.google.android.material.textfield.TextInputLayout
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:hint="SEX">
+                                            android:hint="Phone Number">
 
                                             <com.google.android.material.textfield.TextInputEditText
-                                                android:id="@+id/sex"
+                                                android:id="@+id/phonenumber"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content" />
 
-                                            <Button
-                                                android:id="@+id/button_save_next"
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="wrap_content"
-                                                android:layout_marginLeft="150dp"
-                                                android:layout_weight="1"
-                                                android:background="@drawable/rounded_button"
-                                                android:text="Next"
-                                                android:textColor="#fff" />
+                                            <com.google.android.material.textfield.TextInputLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:hint="Email Address">
 
+                                                <com.google.android.material.textfield.TextInputEditText
+                                                    android:id="@+id/emailaddress"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content" />
+
+                                                <com.google.android.material.textfield.TextInputLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:hint="Height"
+                                                    android:layout_marginBottom="15dp">
+
+                                                    <com.google.android.material.textfield.TextInputEditText
+                                                        android:id="@+id/height"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:paddingBottom="10dp"/>
+
+                                                    <com.google.android.material.textfield.TextInputLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:hint="Weight"
+                                                        android:layout_marginBottom="15dp">
+
+                                                        <com.google.android.material.textfield.TextInputEditText
+                                                            android:id="@+id/weight"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:paddingBottom="10dp"/>
+
+                                                        <com.google.android.material.textfield.TextInputLayout
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="match_parent"
+                                                            android:hint="Tobacco Product Consumption"
+                                                            android:layout_marginBottom="15dp">
+
+                                                            <com.google.android.material.textfield.TextInputEditText
+                                                                android:id="@+id/tobacco_inlastform"
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="wrap_content"
+                                                                android:paddingBottom="10dp"
+                                                                android:text="No"/>
+
+                                                            <com.google.android.material.textfield.TextInputLayout
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="match_parent"
+                                                                android:hint="State Issued"
+                                                                android:layout_marginBottom="15dp">
+
+                                                                <com.google.android.material.textfield.TextInputEditText
+                                                                    android:id="@+id/state"
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="wrap_content"
+                                                                    android:paddingBottom="10dp" />
+
+                                                                <com.google.android.material.textfield.TextInputLayout
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="match_parent"
+                                                                    android:hint="Annual Income">
+
+                                                                    <com.google.android.material.textfield.TextInputEditText
+                                                                        android:id="@+id/annual_income"
+                                                                        android:layout_width="match_parent"
+                                                                        android:layout_height="wrap_content"
+                                                                        android:text="$500000"/>
+                                                                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                                                                <TextView
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="wrap_content"
+                                                                    android:text="Billing Frequency"
+                                                                    android:padding="7dp"></TextView>
+
+                                                                <Spinner
+                                                                    android:id="@+id/billingFrequency"
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="wrap_content"
+                                                                    android:layout_marginBottom="10dp"
+                                                                    android:layout_marginTop="10dp"
+                                                                    android:background="@drawable/spinshape"/>
+
+                                                                <TextView
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="wrap_content"
+                                                                    android:text="Term Length"
+                                                                    android:padding="7dp"></TextView>
+
+                                                                <Spinner
+                                                                    android:id="@+id/term_length"
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="wrap_content"
+                                                                    android:layout_marginBottom="30dp"
+                                                                    android:layout_marginTop="10dp"
+                                                                    android:background="@drawable/spinshape"/>
+
+
+
+
+                                                                <TextView
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="wrap_content"
+                                                                    android:text="Please confirm if above details are correct"
+                                                                    android:textSize="15dp"
+                                                                    android:layout_marginLeft="15dp"
+                                                                    android:layout_marginBottom="20dp"
+                                                                    android:textAlignment="center"></TextView>
+                                                                <Button
+                                                                    android:id="@+id/button_save_next"
+                                                                    android:layout_width="wrap_content"
+                                                                    android:layout_height="wrap_content"
+                                                                    android:layout_marginLeft="150dp"
+                                                                    android:layout_weight="1"
+                                                                    android:background="@drawable/rounded_button"
+                                                                    android:text="Continue"
+                                                                    android:textColor="#fff"
+                                                                    android:layout_marginBottom="100dp"/>
+
+                                                            </com.google.android.material.textfield.TextInputLayout>
+
+                                                        </com.google.android.material.textfield.TextInputLayout>
+                                                    </com.google.android.material.textfield.TextInputLayout>
+                                                </com.google.android.material.textfield.TextInputLayout>
+                                            </com.google.android.material.textfield.TextInputLayout>
                                         </com.google.android.material.textfield.TextInputLayout>
 
+
+
                                     </com.google.android.material.textfield.TextInputLayout>
+
+                                    <!--                            <com.google.android.material.textfield.TextInputEditText-->
+                                    <!--                                android:id="@+id/addrline2"-->
+                                    <!--                                android:layout_width="match_parent"-->
+                                    <!--                                android:layout_height="wrap_content"-->
+                                    <!--                                android:paddingBottom="10dp" />-->
                                 </com.google.android.material.textfield.TextInputLayout>
                             </com.google.android.material.textfield.TextInputLayout>
                         </com.google.android.material.textfield.TextInputLayout>
@@ -129,6 +267,5 @@
                 </com.google.android.material.textfield.TextInputLayout>
             </com.google.android.material.textfield.TextInputLayout>
         </com.google.android.material.textfield.TextInputLayout>
-
-    </com.google.android.material.textfield.TextInputLayout>
+    </ScrollView>
 </LinearLayout>

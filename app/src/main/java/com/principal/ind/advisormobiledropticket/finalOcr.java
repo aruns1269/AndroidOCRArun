@@ -1,5 +1,7 @@
 package com.principal.ind.advisormobiledropticket;
 
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -14,6 +16,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -28,7 +31,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class finalOcr extends AppCompatActivity {
+public class finalOcr extends Activity {
 
     Button btnCaptureImage;
     ImageView imageDisplay;
@@ -51,10 +54,44 @@ public class finalOcr extends AppCompatActivity {
         btnResetImage = (Button)findViewById(R.id.finalbtn_resetImage);
         nextButton = (Button)findViewById(R.id.finalnextButton);
         sb = new StringBuilder();
+//        final DialogInterface dialog = new DialogInterface() {
+//            @Override
+//            public void cancel() {
+//
+//            }
+//
+//            @Override
+//            public void dismiss() {
+//
+//            }
+//        };
 
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+//                AlertDialog.Builder alertDialog = new AlertDialog.Builder(getApplicationContext());
+//                alertDialog.setMessage("Choose a Picture");
+//                alertDialog.setPositiveButton(R.string.dialouge_gallery, new DialogInterface.OnClickListener(){
+//
+//                    @Override
+//                            public void onClick(DialogInterface dialog, int which){
+//
+//                        Intent galleryIntent = new Intent();
+//                        galleryIntent.setType("image/*");
+//                        galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+//                        startActivityForResult(Intent.createChooser(galleryIntent,"select picture"),PICK_IMAGE_W2);
+//                    }
+//
+//                });
+//                alertDialog.create().show();
+/*
+                Intent cameraintent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(Intent.createChooser(cameraintent,"select picture"),PICK_IMAGE_W2);*/
+
+//                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//                startActivityForResult(intent,0);
+
                 Intent galleryIntent = new Intent();
                 galleryIntent.setType("image/*");
                 galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
@@ -99,8 +136,9 @@ public class finalOcr extends AppCompatActivity {
 
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == PICK_IMAGE_W2 && resultCode == RESULT_OK) {
+        if (requestCode == 2) {
             imageUri = data.getData();
+            //Bitmap bitmap = (Bitmap) data.getExtras().get("data");
             sb = new StringBuilder();
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
@@ -133,16 +171,23 @@ public class finalOcr extends AppCompatActivity {
                             sb.append(allLines.get(i).toString());
                         }
                     }
-                    Toast.makeText(this,sb.toString(),Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(this,sb.toString(),Toast.LENGTH_SHORT).show();
 
                 }
 
 
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
+
+            nextButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getApplicationContext(),LastForm.class);
+                    startActivity(intent);
+                }
+            });
+
         }
 //
 
@@ -227,7 +272,11 @@ public class finalOcr extends AppCompatActivity {
                             }
                         }
                         if(allLines.get(i).toString().contains("Hgt") || allLines.get(i).toString().contains("HGT")){
-                            insured.setHeight(allLines.get(i).toString().replaceAll("Hgt|HGT","").substring(1,5));
+                            String height = allLines.get(i).toString().replaceAll("Hgt|HGT","").substring(1,5);
+                            String heightInches = height.substring(0,1);
+                            String heightFeet = height.substring(2);
+                            String heightInInchesAndFeet = heightInches + "'" + heightFeet + "\"";
+                            insured.setHeight(heightInInchesAndFeet);
                         }
                         if(allLines.get(i).toString().contains("wGT") || allLines.get(i).toString().contains("WGT")){
                             insured.setWeight(allLines.get(i).toString().replaceAll("HGT|wGT","").substring(6));
@@ -254,7 +303,7 @@ public class finalOcr extends AppCompatActivity {
 //                            sb.append(allLines.get(i).toString());
 //                        }
 //                    }
-                    Toast.makeText(this,"firstname: "+firstname + "\nlastname: "+ lastname + "\ndob: " +dob +"\naddress1: "+address1+"\naddress2: "+address2+"\nDL no:"+dl+"\nexp: "+exp+"\ngender: "+sex+"\nheight: "+height+"\nweight: "+weight+"\nstate: "+state,Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(this,"firstname: "+firstname + "\nlastname: "+ lastname + "\ndob: " +dob +"\naddress1: "+address1+"\naddress2: "+address2+"\nDL no:"+dl+"\nexp: "+exp+"\ngender: "+sex+"\nheight: "+height+"\nweight: "+weight+"\nstate: "+state,Toast.LENGTH_SHORT).show();
 
                     //         Toast.makeText(this,sb.toString(),Toast.LENGTH_SHORT).show();
                     setReviewForm(insured);
@@ -385,7 +434,7 @@ public class finalOcr extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),activity_tobacco.class);
+                Intent intent = new Intent(getApplicationContext(),activity_selfie.class);
                 // Intent intent = new Intent(getApplicationContext(),W2Form.class);
                 intent.putExtra("state", insured.getState());
                 intent.putExtra("fName",insured.getFirstName());

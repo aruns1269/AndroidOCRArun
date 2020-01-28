@@ -2,17 +2,20 @@
     <string name="app_name">AdvisorMobileDropTicket</string>
     <string name="title_activity_ocr">Principal</string>
     <string name="title_activity_last_form">Principal</string>
-    <string name="title_activity_first_page">Principal Life Insurance</string>
+    <string name="title_activity_first_page">Principal</string>
     <string name="title_activity_second_page_instructions">Principal</string>
     <string name="Instructions">Principal</string>
     <string name="title_activity_selfie">Principal</string>
     <string name="title_activity_last_form2">Principal</string>
     <string name="title_activity_w2_form">Principal</string>
     <string name="title_activity_get__quote">Principal</string>
+    <string name="dialouge_gallery">Gallery</string>
+    <string name="dialouge_camera">Camera</string>
     <string name="title_activity_tobacco">Principal</string>
     <string name="title_activity_final_ocr">Principal</string>
     <string name="title_activity_attach">Principal</string>
-    <string name="bigText">I authorize any insurance (or reinsuring company , consumer reporting agency , govtmental agency, isurance agent, broker, licensed repreasentative, or any other organization </string>
+    <string name="bigText">I authorize Principal to obtain my personal information and perform background verification.</string>
+    <string name="discalimer">*Actual rates to be determined based on the information obtained during underwriting process from sources other than applicant. </string>
     <string-array name="states">
         <item>Select State</item>
         <item>New York</item>
@@ -21,6 +24,17 @@
         <item>Kenturcy</item>
         <item>Washington</item>
         <item>Alaska</item>
+    </string-array>
+    <string-array name="policy">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+    </string-array>
+    <string-array name="billing">
+        <item>Monthly</item>
+        <item>Quarterly</item>
+        <item>Semi-annual</item>
+        <item>Annual</item>
     </string-array>
     <string-array name="billingFrequency">
         <item>Select Billing Frequency</item>

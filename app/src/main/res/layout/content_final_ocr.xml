@@ -7,40 +7,52 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:background="@color/colorBackGround"
-    android:padding="5dp"
+
     tools:context=".ocr">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
 
+        app:title="Principal"
+        app:titleTextColor="@color/colorBackGround" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="Get your custom life insurance quote"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="20dp"></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="Scan valid Driving License and latest Income proof(W2)"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="5dp"
+
+        android:textSize="20dp"
+
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"></TextView>
 
 
     <ImageView
+        android:id="@+id/finalimageCapture"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:id="@+id/finalimageCapture"/>
+        android:visibility="visible"
+        android:src="@drawable/docimage"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
 
-
-
-    <Button
-        android:id="@+id/finalbtn_captureImage1"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/rounded_button"
-        android:text="Scan W2"
-        android:textColor="#fff"
-        android:textSize="18sp"
-        android:translationY="@dimen/cardview_compat_inset_shadow" />
-
-    <Button
-        android:id="@+id/finalbtn_resetImage"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/rounded_button"
-        android:text="Scan DL"
-        android:textColor="#fff"
-        android:textSize="18sp"
-        android:translationY="@dimen/cardview_compat_inset_shadow" />
 
     <!--    <Button-->
     <!--        android:id="@+id/btn_w2_from"-->
@@ -113,21 +125,47 @@
     <!--&lt;!&ndash;        android:textColor="@color/cardview_dark_background"&ndash;&gt;-->
     <!--&lt;!&ndash;        android:textSize="18sp" />&ndash;&gt;-->
 
+    <Button
+        android:id="@+id/finalbtn_resetImage"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_button"
+        android:text="Scan DL"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:translationY="@dimen/cardview_compat_inset_shadow" />
+
+    <Button
+        android:id="@+id/finalbtn_captureImage1"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_button"
+        android:text="Scan W2"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:translationY="@dimen/cardview_compat_inset_shadow" />
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="30dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:paddingTop="30dp">
 
-        <Button
-            android:id="@+id/finalnextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:text="next"
-            android:typeface="normal"
-            android:visibility="visible"
-            android:layout_margin="@dimen/cardview_default_radius"/>
     </TableRow>
+
+    <Button
+        android:id="@+id/finalnextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/cardview_default_radius"
+        android:background="@drawable/rounded_button"
+        android:text="next"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        />
+
+
 
 </LinearLayout>
