@@ -9,15 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LastFormPage2"></activity>
+        <activity android:name=".Scan_Check"></activity>
+        <activity android:name=".ShowBeneficiaryScan" />
+        <activity android:name=".AddBenficiary" />
+        <activity android:name=".LastFormPage2" />
         <activity
             android:name=".attach"
             android:label="@string/title_activity_attach"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".finalOcr"
             android:label="@string/title_activity_final_ocr"
-            android:theme="@style/Theme.AppCompat.Light"></activity>
+            android:theme="@style/Theme.AppCompat.Light" />
         <activity
             android:name=".activity_tobacco"
             android:label="@string/title_activity_tobacco"
@@ -25,7 +28,7 @@
         <activity
             android:name=".Get_Quote"
             android:label="@string/title_activity_get__quote"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".W2Form"
             android:label="@string/title_activity_w2_form"

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/colorBackGround"
+
+    tools:context=".ocr">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+
+        app:title="Principal"
+        app:titleTextColor="@color/colorBackGround" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="Add your Beneficiary"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="20dp"></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="Scan valid Driving License and latest Income proof(W2)"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="5dp"
+
+        android:textSize="20dp"
+
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"></TextView>
+
+
+    <ImageView
+        android:id="@+id/finalimageCapture"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:visibility="visible"
+        android:src="@drawable/docimage"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+
+    <!--    <Button-->
+    <!--        android:id="@+id/btn_w2_from"-->
+    <!--        android:layout_width="300dp"-->
+    <!--        android:layout_height="60dp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:background="@drawable/rounded_button"-->
+    <!--        android:text="W2 Form"-->
+    <!--        android:textColor="#fff"-->
+    <!--        android:textSize="18sp"-->
+    <!--        android:translationY="@dimen/cardview_compat_inset_shadow" />-->
+
+    <!--    <TableRow-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:paddingTop="30dp">-->
+    <!--        <TextView-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            android:background="#2196F3"-->
+    <!--            android:drawablePadding="@dimen/cardview_default_radius"-->
+    <!--            android:lineSpacingExtra="12sp"-->
+    <!--            android:text="Phone Number"-->
+    <!--            android:textColor="@color/cardview_dark_background"-->
+    <!--            android:textSize="18sp"-->
+    <!--            android:textStyle="bold"-->
+    <!--            android:typeface="normal"-->
+    <!--            />-->
+    <!--    </TableRow>-->
+
+
+
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/editTextPhone"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="10dp"-->
+
+    <!--        android:hint="enter phone number"-->
+    <!--        android:paddingTop="@dimen/cardview_compat_inset_shadow"-->
+    <!--        android:textColor="@color/cardview_dark_background"-->
+    <!--        android:textSize="18sp" />-->
+
+
+    <!--&lt;!&ndash;    <TableRow&ndash;&gt;-->
+    <!--&lt;!&ndash;        android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;        android:paddingTop="20dp">&ndash;&gt;-->
+    <!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_marginTop="10dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:background="#2196F3"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:text="Email Address"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:textColor="@color/cardview_dark_background"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:textSize="18sp"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:textStyle="bold" />&ndash;&gt;-->
+    <!--&lt;!&ndash;    </TableRow>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;    <EditText&ndash;&gt;-->
+    <!--&lt;!&ndash;        android:id="@+id/editTextEmail"&ndash;&gt;-->
+    <!--&lt;!&ndash;        android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;        android:layout_marginTop="10dp"&ndash;&gt;-->
+
+    <!--&lt;!&ndash;        android:hint="enter email address"&ndash;&gt;-->
+    <!--&lt;!&ndash;        android:paddingTop="@dimen/cardview_compat_inset_shadow"&ndash;&gt;-->
+    <!--&lt;!&ndash;        android:textColor="@color/cardview_dark_background"&ndash;&gt;-->
+    <!--&lt;!&ndash;        android:textSize="18sp" />&ndash;&gt;-->
+
+    <Button
+        android:id="@+id/finalbtn_resetImage"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_button"
+        android:text="Scan DL"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:translationY="@dimen/cardview_compat_inset_shadow" />
+
+    <Button
+        android:id="@+id/finalbtn_captureImage1"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_button"
+        android:text="Scan W2"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:translationY="@dimen/cardview_compat_inset_shadow" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="30dp">
+
+    </TableRow>
+
+    <Button
+        android:id="@+id/finalnextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/cardview_default_radius"
+        android:background="@drawable/rounded_button"
+        android:text="next"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        />
+
+
+
+</LinearLayout>

@@ -12,6 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -31,6 +32,7 @@ public class Get_Quote extends AppCompatActivity {
     TextView covAmount;
     TextView premiumTag;
     TextView monPrem;
+    private Button finalAction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,14 @@ public class Get_Quote extends AppCompatActivity {
         String tobacco = intent.getStringExtra("tobacco");
         String health = "";
         Integer age = 65 ;
+        finalAction = (Button)findViewById(R.id.applyutton);
+        finalAction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AddBenficiary.class);
+                startActivity(intent);
+            }
+        });
         policy = (Spinner) findViewById(R.id.spinner);
         biling = (Spinner) findViewById(R.id.spinner2);
        // calculatedPremium = (TextView)findViewById(R.id.textForcalculatedpremium);
